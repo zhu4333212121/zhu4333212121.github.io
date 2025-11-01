@@ -157,7 +157,6 @@ export const siteConfig: SiteConfig = {
 				"思想的碰撞，灵感的火花",
 				"道阻且长，行则将至",
 				"仰望星空，脚踏实地",
-	
 			],
 			typewriter: {
 				enable: true, // 启用副标题打字机效果
@@ -267,7 +266,6 @@ export const navBarConfig: NavBarConfig = {
 					external: true,
 					icon: "fa6-brands:bilibili",
 				},
-
 			],
 		},
 		{
@@ -329,13 +327,13 @@ export const profileConfig: ProfileConfig = {
 			icon: "fa6-brands:bilibili",
 			url: "https://space.bilibili.com/1457550463",
 		},
-		
+
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/zhu4333212121/zhu4333212121.github.io",
 		},
-	
+
 		{
 			name: "Discord",
 			icon: "fa6-brands:discord",
@@ -530,7 +528,7 @@ export const sakuraConfig: SakuraConfig = {
 
 // Pio 看板娘配置
 export const pioConfig: import("./types/config").PioConfig = {
-	enable: true, // 启用看板娘
+	enable: false, // 启用看板娘
 	models: ["/pio/models/xiaomai/xiaomai.model.json"], // 默认模型路径
 	position: "left", // 默认位置在右侧
 	width: 200, // 默认宽度

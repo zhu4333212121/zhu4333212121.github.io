@@ -28,177 +28,177 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  // GitHub Pages 部署配置
-  site: "https://zhu4333212121.github.io",
-  base: "/zhu4333212121.github.io",
-  trailingSlash: "always",
+	// GitHub Pages 部署配置
+	site: "https://zhu4333212121.github.io",
+	base: "/",
+	trailingSlash: "always",
 
-  // 集成配置
-  integrations: [
-    // Tailwind CSS
-    tailwind({
-      nesting: true,
-    }),
+	// 集成配置
+	integrations: [
+		// Tailwind CSS
+		tailwind({
+			nesting: true,
+		}),
 
-    // Swup 页面过渡
-    swup({
-      theme: false,
-      animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
-      // the default value `transition-` cause transition delay
-      // when the Tailwind class `transition-all` is used
-      containers: ["main"],
-      smoothScrolling: false, // 禁用平滑滚动以提升性能，避免与锚点导航冲突
-      cache: true,
-      preload: false, // 禁用预加载以减少网络请求
-      accessibility: true,
-      updateHead: true,
-      updateBodyClass: false,
-      globalInstance: true,
-      // 滚动相关配置优化
-      resolveUrl: (url) => url,
-      animateHistoryBrowsing: false,
-      skipPopStateHandling: (event) => {
-        // 跳过锚点链接的处理，让浏览器原生处理
-        return event.state && event.state.url && event.state.url.includes("#");
-      },
-    }),
+		// Swup 页面过渡
+		swup({
+			theme: false,
+			animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
+			// the default value `transition-` cause transition delay
+			// when the Tailwind class `transition-all` is used
+			containers: ["main"],
+			smoothScrolling: false, // 禁用平滑滚动以提升性能，避免与锚点导航冲突
+			cache: true,
+			preload: false, // 禁用预加载以减少网络请求
+			accessibility: true,
+			updateHead: true,
+			updateBodyClass: false,
+			globalInstance: true,
+			// 滚动相关配置优化
+			resolveUrl: (url) => url,
+			animateHistoryBrowsing: false,
+			skipPopStateHandling: (event) => {
+				// 跳过锚点链接的处理，让浏览器原生处理
+				return event.state?.url?.includes("#");
+			},
+		}),
 
-    // 图标系统
-    icon({
-      include: {
-        "preprocess: vitePreprocess(),": ["*"],
-        "fa6-brands": ["*"],
-        "fa6-regular": ["*"],
-        "fa6-solid": ["*"],
-        mdi: ["*"],
-        "simple-icons": ["*"],
-      },
-    }),
+		// 图标系统
+		icon({
+			include: {
+				"preprocess: vitePreprocess(),": ["*"],
+				"fa6-brands": ["*"],
+				"fa6-regular": ["*"],
+				"fa6-solid": ["*"],
+				mdi: ["*"],
+				"simple-icons": ["*"],
+			},
+		}),
 
-    // 代码高亮和样式
-    expressiveCode({
-      themes: [expressiveCodeConfig.theme, expressiveCodeConfig.theme],
-      plugins: [
-        pluginCollapsibleSections(),
-        pluginLineNumbers(),
-        pluginLanguageBadge(),
-        pluginCustomCopyButton(),
-      ],
-      defaultProps: {
-        wrap: true,
-        overridesByLang: {
-          shellsession: {
-            showLineNumbers: false,
-          },
-        },
-      },
-      styleOverrides: {
-        codeBackground: "var(--codeblock-bg)",
-        borderRadius: "0.75rem",
-        borderColor: "none",
-        codeFontSize: "0.875rem",
-        codeFontFamily:
-          "'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
-        codeLineHeight: "1.5rem",
-        frames: {
-          editorBackground: "var(--codeblock-bg)",
-          terminalBackground: "var(--codeblock-bg)",
-          terminalTitlebarBackground: "var(--codeblock-topbar-bg)",
-          editorTabBarBackground: "var(--codeblock-topbar-bg)",
-          editorActiveTabBackground: "none",
-          editorActiveTabIndicatorBottomColor: "var(--primary)",
-          editorActiveTabIndicatorTopColor: "none",
-          editorTabBarBorderBottomColor: "var(--codeblock-topbar-bg)",
-          terminalTitlebarBorderBottomColor: "none",
-        },
-        textMarkers: {
-          delHue: 0,
-          insHue: 180,
-          markHue: 250,
-        },
-      },
-      frames: {
-        showCopyToClipboardButton: false,
-      },
-    }),
+		// 代码高亮和样式
+		expressiveCode({
+			themes: [expressiveCodeConfig.theme, expressiveCodeConfig.theme],
+			plugins: [
+				pluginCollapsibleSections(),
+				pluginLineNumbers(),
+				pluginLanguageBadge(),
+				pluginCustomCopyButton(),
+			],
+			defaultProps: {
+				wrap: true,
+				overridesByLang: {
+					shellsession: {
+						showLineNumbers: false,
+					},
+				},
+			},
+			styleOverrides: {
+				codeBackground: "var(--codeblock-bg)",
+				borderRadius: "0.75rem",
+				borderColor: "none",
+				codeFontSize: "0.875rem",
+				codeFontFamily:
+					"'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+				codeLineHeight: "1.5rem",
+				frames: {
+					editorBackground: "var(--codeblock-bg)",
+					terminalBackground: "var(--codeblock-bg)",
+					terminalTitlebarBackground: "var(--codeblock-topbar-bg)",
+					editorTabBarBackground: "var(--codeblock-topbar-bg)",
+					editorActiveTabBackground: "none",
+					editorActiveTabIndicatorBottomColor: "var(--primary)",
+					editorActiveTabIndicatorTopColor: "none",
+					editorTabBarBorderBottomColor: "var(--codeblock-topbar-bg)",
+					terminalTitlebarBorderBottomColor: "none",
+				},
+				textMarkers: {
+					delHue: 0,
+					insHue: 180,
+					markHue: 250,
+				},
+			},
+			frames: {
+				showCopyToClipboardButton: false,
+			},
+		}),
 
-    // Svelte 组件支持
-    svelte(),
+		// Svelte 组件支持
+		svelte(),
 
-    // 站点地图生成
-    sitemap(),
-  ],
+		// 站点地图生成
+		sitemap(),
+	],
 
-  // Markdown 处理配置
-  markdown: {
-    remarkPlugins: [
-      remarkMath, // 数学公式支持
-      remarkReadingTime, // 阅读时间计算
-      remarkExcerpt, // 摘要生成
-      remarkGithubAdmonitionsToDirectives, // GitHub 警告框转指令
-      remarkDirective, // 指令处理
-      remarkSectionize, // 章节化
-      parseDirectiveNode, // 自定义指令解析
-      remarkMermaid, // Mermaid 图表支持
-    ],
-    rehypePlugins: [
-      rehypeKatex, // KaTeX 数学公式渲染
-      rehypeSlug, // 标题锚点
-      rehypeMermaid, // Mermaid 图表渲染
-      [
-        rehypeComponents,
-        {
-          components: {
-            github: GithubCardComponent,
-            note: (x, y) => AdmonitionComponent(x, y, "note"),
-            tip: (x, y) => AdmonitionComponent(x, y, "tip"),
-            important: (x, y) => AdmonitionComponent(x, y, "important"),
-            caution: (x, y) => AdmonitionComponent(x, y, "caution"),
-            warning: (x, y) => AdmonitionComponent(x, y, "warning"),
-          },
-        },
-      ],
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: "append",
-          properties: {
-            className: ["anchor"],
-          },
-          content: {
-            type: "element",
-            tagName: "span",
-            properties: {
-              className: ["anchor-icon"],
-              "data-pagefind-ignore": true,
-            },
-            children: [
-              {
-                type: "text",
-                value: "#",
-              },
-            ],
-          },
-        },
-      ],
-    ],
-  },
+	// Markdown 处理配置
+	markdown: {
+		remarkPlugins: [
+			remarkMath, // 数学公式支持
+			remarkReadingTime, // 阅读时间计算
+			remarkExcerpt, // 摘要生成
+			remarkGithubAdmonitionsToDirectives, // GitHub 警告框转指令
+			remarkDirective, // 指令处理
+			remarkSectionize, // 章节化
+			parseDirectiveNode, // 自定义指令解析
+			remarkMermaid, // Mermaid 图表支持
+		],
+		rehypePlugins: [
+			rehypeKatex, // KaTeX 数学公式渲染
+			rehypeSlug, // 标题锚点
+			rehypeMermaid, // Mermaid 图表渲染
+			[
+				rehypeComponents,
+				{
+					components: {
+						github: GithubCardComponent,
+						note: (x, y) => AdmonitionComponent(x, y, "note"),
+						tip: (x, y) => AdmonitionComponent(x, y, "tip"),
+						important: (x, y) => AdmonitionComponent(x, y, "important"),
+						caution: (x, y) => AdmonitionComponent(x, y, "caution"),
+						warning: (x, y) => AdmonitionComponent(x, y, "warning"),
+					},
+				},
+			],
+			[
+				rehypeAutolinkHeadings,
+				{
+					behavior: "append",
+					properties: {
+						className: ["anchor"],
+					},
+					content: {
+						type: "element",
+						tagName: "span",
+						properties: {
+							className: ["anchor-icon"],
+							"data-pagefind-ignore": true,
+						},
+						children: [
+							{
+								type: "text",
+								value: "#",
+							},
+						],
+					},
+				},
+			],
+		],
+	},
 
-  // Vite 构建配置
-  vite: {
-    build: {
-      rollupOptions: {
-        onwarn(warning, warn) {
-          // 临时抑制特定警告
-          if (
-            warning.message.includes("is dynamically imported by") &&
-            warning.message.includes("but also statically imported by")
-          ) {
-            return;
-          }
-          warn(warning);
-        },
-      },
-    },
-  },
+	// Vite 构建配置
+	vite: {
+		build: {
+			rollupOptions: {
+				onwarn(warning, warn) {
+					// 临时抑制特定警告
+					if (
+						warning.message.includes("is dynamically imported by") &&
+						warning.message.includes("but also statically imported by")
+					) {
+						return;
+					}
+					warn(warning);
+				},
+			},
+		},
+	},
 });
