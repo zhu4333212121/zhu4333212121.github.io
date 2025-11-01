@@ -1,0 +1,1 @@
+import"./config.DdzV4bgS.js";import"./zh_TW.Cjjw3Vy_.js";function s(o,t){const n=o.replace(/^\/|\/$/g,"").toLowerCase(),r=t.replace(/^\/|\/$/g,"").toLowerCase();return n===r}function e(...o){return o.join("/").replace(/\/+/g,"/")}function c(o){return a(`/posts/${o}/`)}function a(o){return e("","/zhu4333212121.github.io/",o)}export{c as g,s as p,a as u};
