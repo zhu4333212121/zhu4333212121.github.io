@@ -17,11 +17,11 @@ import { LinkPreset } from "./types/config";
 // 移除i18n导入以避免循环依赖
 
 // 定义站点语言
-const SITE_LANG = "en"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
+const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 
 export const siteConfig: SiteConfig = {
-	title: "Mizuki",
-	subtitle: "One demo website",
+	title: "欢迎来到碘131の博客",
+	subtitle: "欢迎光临",
 
 	lang: SITE_LANG,
 
@@ -44,7 +44,7 @@ export const siteConfig: SiteConfig = {
 	// 顶栏标题配置
 	navbarTitle: {
 		// 顶栏标题文本
-		text: "MizukiUI",
+		text: "碘131",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
 		icon: "assets/home/home.png",
 	},
@@ -77,7 +77,6 @@ export const siteConfig: SiteConfig = {
 		// 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播
 		src: {
 			desktop: [
-				"/assets/desktop-banner/d1.webp",
 				"/assets/desktop-banner/d2.webp",
 				"/assets/desktop-banner/d3.webp",
 				"/assets/desktop-banner/d4.webp",
@@ -85,6 +84,10 @@ export const siteConfig: SiteConfig = {
 				"/assets/desktop-banner/d6.webp",
 				"/assets/desktop-banner/d7.webp",
 				"/assets/desktop-banner/d8.webp",
+				"/assets/desktop-banner/d9.webp",
+				"/assets/desktop-banner/d10.webp",
+				"/assets/desktop-banner/d11.webp",
+				"/assets/desktop-banner/d12.webp",
 			], // 桌面横幅图片
 			mobile: [
 				"/assets/mobile-banner/m1.webp",
@@ -95,6 +98,19 @@ export const siteConfig: SiteConfig = {
 				"/assets/mobile-banner/m6.webp",
 				"/assets/mobile-banner/m7.webp",
 				"/assets/mobile-banner/m8.webp",
+				"/assets/mobile-banner/m9.webp",
+				"/assets/mobile-banner/m10.webp",
+				"/assets/mobile-banner/m11.webp",
+				"/assets/mobile-banner/m12.webp",
+				"/assets/mobile-banner/m13.webp",
+				"/assets/mobile-banner/m14.webp",
+				"/assets/mobile-banner/m15.webp",
+				"/assets/mobile-banner/m16.webp",
+				"/assets/mobile-banner/m17.webp",
+				"/assets/mobile-banner/m18.webp",
+				"/assets/mobile-banner/m19.webp",
+				"/assets/mobile-banner/m20.webp",
+				"/assets/mobile-banner/m21.webp",
 			], // 移动横幅图片
 		}, // 使用本地横幅图片
 
@@ -123,19 +139,31 @@ export const siteConfig: SiteConfig = {
 
 		homeText: {
 			enable: true, // 在主页显示自定义文本
-			title: "Beautiful Mizuki!", // 主页横幅主标题
+			title: "碘131のMagic House", // 主页横幅主标题
 
 			subtitle: [
-				"A Showcase Demo Site",
-				"Carousel Highlight: Innovation",
-				"Carousel Focus: User Experience",
-				"Carousel Spot: Core Advantages",
+				"欲买桂花同载酒，终不似，少年游！",
+				"花有重开日，人无再少年！",
+				"记录生活的点滴，分享美好的瞬间！",
+				"纸上得来终觉浅，绝知此事要躬行",
+				"岁月不居，时节如流，唯文字永恒！",
+				"书卷多情似故人，晨昏忧乐每相亲！",
+				"山中何事？松花酿酒，春水煎茶！",
+				"且将新火试新茶，诗酒趁年华！",
+				"生活自有诗意",
+				"保持热爱，奔赴山海",
+				"读万卷书，行万里路",
+				"保持好奇，持续学习，永远成长",
+				"思想的碰撞，灵感的火花",
+				"道阻且长，行则将至",
+				"仰望星空，脚踏实地",
+	
 			],
 			typewriter: {
 				enable: true, // 启用副标题打字机效果
 
-				speed: 100, // 打字速度（毫秒）
-				deleteSpeed: 50, // 删除速度（毫秒）
+				speed: 150, // 打字速度（毫秒）
+				deleteSpeed: 30, // 删除速度（毫秒）
 				pauseTime: 2000, // 完全显示后的暂停时间（毫秒）
 			},
 		},
@@ -175,10 +203,10 @@ export const siteConfig: SiteConfig = {
 	// 字体配置
 	font: {
 		zenMaruGothic: {
-			enable: true, // 启用全局圆体适合日语和英语，对中文适配一般
+			enable: false, // 启用全局圆体适合日语和英语，对中文适配一般
 		},
 		hanalei: {
-			enable: false, // 启用 Hanalei 字体作为全局字体，适合中文去使用
+			enable: true, // 启用 Hanalei 字体作为全局字体，适合中文去使用
 		},
 	},
 	showLastModified: true, // 控制“上次编辑”卡片显示的开关
@@ -229,22 +257,17 @@ export const navBarConfig: NavBarConfig = {
 			children: [
 				{
 					name: "GitHub",
-					url: "https://github.com/matsuzaka-yuki/Mizuki",
+					url: "https://github.com/zhu4333212121/zhu4333212121.github.io",
 					external: true,
 					icon: "fa6-brands:github",
 				},
 				{
 					name: "Bilibili",
-					url: "https://space.bilibili.com/701864046",
+					url: "https://space.bilibili.com/1457550463",
 					external: true,
 					icon: "fa6-brands:bilibili",
 				},
-				{
-					name: "Gitee",
-					url: "https://gitee.com/matsuzakayuki/Mizuki",
-					external: true,
-					icon: "mdi:git",
-				},
+
 			],
 		},
 		{
@@ -294,7 +317,7 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.webp", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
-	name: "Matsuzaka Yuki",
+	name: "碘131",
 	bio: "The world is big, you have to go and see",
 	typewriter: {
 		enable: true, // 启用个人简介打字机效果
@@ -304,27 +327,19 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "Bilibli",
 			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/701864046",
+			url: "https://space.bilibili.com/1457550463",
 		},
-		{
-			name: "Gitee",
-			icon: "mdi:git",
-			url: "https://gitee.com/matsuzakayuki",
-		},
+		
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/matsuzaka-yuki",
+			url: "https://github.com/zhu4333212121/zhu4333212121.github.io",
 		},
-		{
-			name: "Codeberg",
-			icon: "simple-icons:codeberg",
-			url: "https://codeberg.org",
-		},
+	
 		{
 			name: "Discord",
 			icon: "fa6-brands:discord",
-			url: "https://discord.gg/MqW6TcQtVM",
+			url: "https://discord.com/channels/@me",
 		},
 	],
 };
@@ -350,8 +365,8 @@ export const commentConfig: CommentConfig = {
 };
 
 export const announcementConfig: AnnouncementConfig = {
-	title: "Announcement", // 公告标题
-	content: "Welcome to my blog! This is a sample announcement.", // 公告内容
+	title: "个人简介", // 公告标题
+	content: "Ciallo～(∠・ω< )⌒★，一名努力学习的苦逼大学生", // 公告内容
 	closable: true, // 允许用户关闭公告
 	link: {
 		enable: true, // 启用链接
@@ -516,10 +531,10 @@ export const sakuraConfig: SakuraConfig = {
 // Pio 看板娘配置
 export const pioConfig: import("./types/config").PioConfig = {
 	enable: true, // 启用看板娘
-	models: ["/pio/models/pio/model.json"], // 默认模型路径
+	models: ["/pio/models/xiaomai/xiaomai.model.json"], // 默认模型路径
 	position: "left", // 默认位置在右侧
-	width: 280, // 默认宽度
-	height: 250, // 默认高度
+	width: 200, // 默认宽度
+	height: 200, // 默认高度
 	mode: "draggable", // 默认为可拖拽模式
 	hiddenOnMobile: true, // 默认在移动设备上隐藏
 	dialog: {
